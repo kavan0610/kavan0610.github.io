@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio V61 - SVG Masked Official Borders</title>
+
+  <!-- External Libraries -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero-sec">
+    <div id="hero-lens"></div>
+    <div class="hero-name-a hero-display">KAVAN</div>
+    <div class="hero-name-b hero-display text-accent">DESAI</div>
+    <div class="role-window">
+      <div class="role-track" id="roles">
+        <div class="role">Software Engineer</div>
+        <div class="role">Artificial Intelligence Engineer</div>
+        <div class="role">Machine Learning Engineer</div>
+        <div class="role">Full-Stack Developer</div>
+        <div class="role">Researcher</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="mag">
+      
+      <!-- Intro Cell -->
+      <div class="cell cell-about">
+        <div class="tiny mb-1-5">Introduction</div>
+        <h3 class="thick about-title">Hi, I am Kavan.</h3>
+        <p class="about-desc">I am a software engineer and AI researcher dedicated to building scalable, high-performance systems at the intersection of machine learning and distributed architecture.</p>
+        <p class="about-desc-muted">By bridging the gap between complex theoretical concepts and robust full-stack development, I architect intelligent solutions that solve challenging real-world problems.</p>
+      </div>
+
+      <!-- Education Cell -->
+
+      <!-- <div class="cell cell-edu">
+        <div class="tiny mb-1">Education</div>
+        <div class="edu-wrapper">
+          
+          <div class="edu-row">
+            <div>
+              <h3 class="thick edu-degree">M.S. Computer Science</h3>
+              <p class="mono edu-uni">UMass Amherst</p>
+              <p class="mono edu-year">2026 — 2028</p>
+            </div>
+            <div class="text-right">
+              <div class="mono gpa-label">GPA</div>
+              <div class="hero-display gpa-value">-</div>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          
+          <div class="edu-row">
+            <div>
+              <h3 class="thick edu-degree">B.Tech Computer Science & Engineering</h3>
+              <p class="mono edu-uni">Nirma University</p>
+              <p class="mono edu-year">2022 — 2026</p>
+            </div>
+            <div class="text-right">
+              <div class="mono gpa-label">CGPA</div>
+              <div class="hero-display gpa-value">8.9 / 10</div>
+            </div>
+          </div>
+
+        </div>
+      </div> -->
+      <div class="cell cell-edu">
+        <div class="tiny mb-1">Education</div>
+        <div class="edu-wrapper">
+          
+          <div class="edu-row">
+            <div>
+              <h3 class="thick edu-degree">B.Tech Computer Science & Engineering</h3>
+              <p class="mono edu-uni">Nirma University</p>
+              <p class="mono edu-year">2022 — 2026</p>
+            </div>
+            <div class="text-right">
+              <div class="mono gpa-label">CGPA</div>
+              <div class="hero-display gpa-value">8.9 / 10</div>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+
+          <div class="about-desc">Relevant Coursework</div>
+          <div class="edu-row">
+            <div>
+              <p><span class="mono edu-uni">CORE :</span><span class="mono edu-year"> Data Structure and Algorithms <b>(DSA)</b>, Object-Oriented Programming <b>(OOP)</b>, Database Management Systems <b>(DBMS)</b>, Operating Systems <b>(OS)</b>, Software Engineering <b>(SE)</b></span></p>
+              <p><span class="mono edu-uni">AI :</span><span class="mono edu-year"> Machine Learning <b>(ML)</b>, Natural Language Processing <b>(NLP)</b>, Computer Vision <b>(CV)</b>, Reinforcement Learning <b>(RL)</b>, Machine Learning Operations <b>(MLOPS)</b></span></p>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+
+      <!-- Interests Cell -->
+      <div class="cell cell-res">
+        <div class="tiny vertical-title">Research Interest</div>
+        
+        <div class="interest-content">
+          <h3 class="thick interest-title">Artificial Intelligence</h3>
+          <p class="interest-desc">My research focuses on bridging the gap between theoretical AI and tangible environments. I am primarily exploring Reinforcement Learning, Natural Language Processing, and designing autonomous agents capable of reasoning about and interacting with the physical world.</p>
+          
+          <a href="https://scholar.google.com/citations?hl=en&user=wIPpv3oAAAAJ" target="_blank" rel="noopener noreferrer" class="scholar-btn">
+            Google Scholar <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Status Cell -->
+      <div class="cell cell-stack">
+        <div class="tiny">Status</div>
+        <div class="status-wrapper">
+           <span class="thick status-text">Open</span>
+           <span class="thick status-text">To</span>
+           <span class="thick status-text">Work</span>
+        </div>
+      </div>
+
+      <!-- Location Cell -->
+      <div class="cell cell-loc">
+        <div class="map-bg"></div>
+        <div class="map-gradient-overlay"></div>
+        <div id="globe-container"></div>
+        <div class="loc-content">
+          <div class="tiny loc-label">Location</div>
+          <div class="thick loc-country">INDIA</div>
+          <div class="loc-coords-wrapper">
+            <span class="mono loc-coords">23.0225° N, 72.5714° E</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="experience-section">
+    <h2 class="section-title hero-display">EXPERIENCE</h2>
+    <div class="timeline-wrapper" id="timeline-wrapper">
+      <!-- Cards will be injected here by JS -->
+      <div class="timeline-track" id="timeline-track"></div>
+    </div>
+    <div class="timeline-pagination" id="timeline-dots"></div>
+  </section>
+
+  <!-- EXPERTISE SECTION -->
+  <section class="exp">
+    <div class="exp-left">
+      <div class="exp-title">Technical Capabilities</div>
+      <div class="index-list">
+        <div class="index-item thick active" data-target="detail-1">Core Languages</div>
+        <div class="index-item thick" data-target="detail-2">Artificial Intelligence</div>
+        <div class="index-item thick" data-target="detail-3">Backend & Databases</div>
+        <div class="index-item thick" data-target="detail-4">Cloud & MLOps</div>
+      </div>
+    </div>
+
+    <div class="exp-right">
+      
+      <!-- Detail 1: Core Languages -->
+      <div class="detail-card active" id="detail-1">
+        <h3 class="thick">Foundational Logic</h3>
+        <p>Core programming languages used to build performance-critical systems, robust backends, and machine learning pipelines. C and C++ provide low-level execution control, while Python, Java, and SQL drive application logic and data management.</p>
+        <div class="detail-tools">C — C++ — Java — Python — JavaScript — SQL</div>
+      </div>
+
+      <!-- Detail 2: Aetifcial Intelligence -->
+      <div class="detail-card" id="detail-2">
+        <h3 class="thick">Applied AI & Research</h3>
+        <p>Developing custom machine learning models and AI applications. Focus areas include training deep neural networks, building retrieval-augmented generation (RAG) pipelines for language models, and designing systems for reinforcement learning and computer vision tasks.</p>
+        <div class="detail-tools">PyTorch — Scikit-Learn — Transformers — LangChain — Gymnasium — OpenCV</div>
+      </div>
+
+      <!-- Detail 3: Backend & Databses -->
+      <div class="detail-card" id="detail-3">
+        <h3 class="thick">Scalable Architecture</h3>
+        <p>Designing high-throughput RESTful architectures and fast APIs. Structuring relational data for speed and reliability to support compute-heavy machine learning backends and interactive web clients.</p>
+        <div class="detail-tools">FastAPI — Flask — Node.js — Express.js — PostgreSQL — MySQL</div>
+      </div>
+
+      <!-- Detail 4: Cloud & MLOps -->
+      <div class="detail-card" id="detail-4">
+        <h3 class="thick">Deployment & Infrastructure</h3>
+        <p>Containerizing applications and orchestrating cloud resources to ensure seamless model training, experiment tracking, and robust, zero-downtime production deployments.</p>
+        <div class="detail-tools">AWS — Docker — Git/Github — Hugging Face — MLFLow</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects">
+    <h2 class="section-title hero-display">PROJECTS</h2>
+    <div class="carousel-wrapper">
+      <div class="arrow left" onclick="move(-1)">[ PREV ]</div>
+      
+      <!-- Slides will be injected here by JS -->
+      <div class="viewport" id="projects-viewport"></div>
+      
+      <div class="arrow right" onclick="move(1)">[ NEXT ]</div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact">
+  <h1 class="hero-display">Let's start<br><span class="text-accent">a conversation.</span></h1>
+  <div class="links">
+
+    <a href="https://github.com/kavan0610" target="_blank" rel="noopener noreferrer">GitHub</a> <span>/</span> 
+    <a href="https://www.linkedin.com/in/kavan-desai-3b0048252/" target="_blank" rel="noopener noreferrer">LinkedIn</a> <span>/</span> 
+    <a href="mailto:kavandesai006@gmail.com">Email</a> <span>/</span> 
+    <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+</section>
+
+  <!-- PROJECT MODAL -->
+  <div class="project-modal" id="project-modal">
+    <div class="modal-close" id="modal-close">[ CLOSE ]</div>
+    <div class="modal-content">
+      <h1 class="hero-display" id="modal-title">Title</h1>
+      
+      <div class="modal-links">
+        <a href="#" id="modal-github" target="_blank">GitHub</a>
+        <a href="#" id="modal-live" target="_blank">Live Deployment</a>
+      </div>
+      
+      <div class="modal-desc" id="modal-desc"></div>
+      
+      <div class="modal-gallery" id="modal-gallery">
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Script -->
+   <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
