@@ -383,13 +383,18 @@ let current = 0;
 const slidesProject = document.querySelectorAll('.slide');
 
 window.move = function(dir) {
-  current = (current + dir + slidesProject.length) % slidesProject.length;
+  const total = slidesProject.length;
+  if (total === 0) return;
+
+  current = (current + dir + total) % total;
+  const prev = (current - 1 + total) % total;
+  const next = (current + 1) % total;
 
   slidesProject.forEach((slide, index) => {
     if (index === current) {
       slide.className = 'slide active';
     } 
-    else if (index === (current - 1 + slidesProject.length) % slidesProject.length) {
+    else if (index === prev) {
       if (dir === -1) {
         slide.style.transition = 'none';
         slide.className = 'slide prev-hidden';
@@ -398,7 +403,7 @@ window.move = function(dir) {
       }
       slide.className = 'slide prev'; 
     } 
-    else {
+    else if (index === next) {
       if (dir === 1) {
         slide.style.transition = 'none';
         slide.className = 'slide next-hidden';
@@ -406,6 +411,10 @@ window.move = function(dir) {
         slide.style.transition = '';
       }
       slide.className = 'slide next'; 
+    } 
+    else {
+      // Correctly hide all extra slides based on the direction of travel
+      slide.className = dir === 1 ? 'slide prev-hidden' : 'slide next-hidden';
     }
   });
 };
