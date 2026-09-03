@@ -12,6 +12,24 @@ const portfolioData = {
   projects: [
     { 
       id: "project-1", 
+      title: "CodeGraph",
+      coverImage: "images/CodeGraph_Screenshot_3.png",
+      description: [
+        "CodeGraph is a graph-augmented code intelligence tool designed to make unfamiliar codebases easier to understand. It combines AST-based structural analysis with semantic search and LLM-powered RAG, allowing you to find symbols, explore callers and callees, trace execution paths, analyze potential impact, and ask natural-language questions about a repository.",
+        "It supports configurable embedding models and LLM providers, including local models, with locally cached embeddings for offline-friendly use. Incremental indexing keeps the graph up to date by processing only changed files, while CodeGraph Studio provides an interactive interface for exploring the resulting code graph.",
+        "Tech Stack: Python, FastAPI, SQLite, HuggingFace SentenceTransformers, Vis.js"
+      ],
+      github: "https://github.com/kavan0610/CodeGraph",
+      live: "https://kavan0610.github.io",
+      screenshots: [
+        "images/CodeGraph_Screenshot_1.png",
+        "images/CodeGraph_Screenshot_2.png",
+        "images/CodeGraph_Screenshot_3.png",
+        "images/CodeGraph_Screenshot_4.png"
+      ]
+    },
+    { 
+      id: "project-2", 
       title: "CloudStream",
       coverImage: "images/CloudStream_Screenshot_1.png",
       description: [
@@ -28,7 +46,7 @@ const portfolioData = {
       ]
     },
     { 
-      id: "project-2", 
+      id: "project-3", 
       title: "RL-Based Station Keeping",
       coverImage: "images/StationKeeping_Screenshot_1.png",
       description: [
@@ -43,7 +61,7 @@ const portfolioData = {
       ]
     },
     { 
-      id: "project-3", 
+      id: "project-4", 
       title: "Paper Parser",
       coverImage: "images/PaperParser_Screenshot_1.png",
       description: [
