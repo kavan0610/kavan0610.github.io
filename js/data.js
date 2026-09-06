@@ -20,7 +20,7 @@ const portfolioData = {
         "Tech Stack: Python, FastAPI, SQLite, HuggingFace SentenceTransformers, Vis.js"
       ],
       github: "https://github.com/kavan0610/CodeGraph",
-      live: "https://kavan0610.github.io",
+      // live: "https://kavan0610.github.io",
       screenshots: [
         "images/CodeGraph_Screenshot_1.png",
         "images/CodeGraph_Screenshot_2.png",
